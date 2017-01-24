@@ -96,11 +96,6 @@ set background=dark
 let g:gruvbox_contrast_dark='soft'
 let g:gruvbox_invert_selection=0
 
-" Powerline
-set laststatus=2
-" set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-set noshowmode
-
 " search options
 set ignorecase
 set smartcase
@@ -262,29 +257,39 @@ let g:ycm_add_preview_to_completeopt=1
 map <silent> <Leader>yg :YcmCompleter GoTo<CR>
 
 " Airline
-if has('gui_running')
-    let g:airline_powerline_fonts=1
-else
-    " let g:airline_theme='monochrome'
-endif
-" let g:airline#extensions#branch#enabled=1
-" let g:airline#extensions#branch#empty_message=''
+" Always show airline
+set laststatus=2
+" Don't display current mode
+set noshowmode
+" Use fancy powerline symbols
+let g:airline_powerline_fonts=1
+" Disable use of %(%) grouping items in the statusline, fixes bleeding color
+" artifact for whitespace section, sometimes causes problem if GVim window is
+" resized
+let airline#extensions#default#section_use_groupitems = 0
+" Truncate long branch names to a fixed length
 let g:airline#extensions#branch#displayed_head_limit=15
-" let g:airline#extensions#tabline#enabled=1
-" let g:airline#extensions#tabline#fnamemod=':t' "show just the file name
-" let g:airline#extensions#tabline#tab_nr_type=1 " tab number
-" let g:airline#extensions#tabline#buffer_idx_mode=1
-" let g:airline#extensions#tabline#formatter='unique_tail_improved'
-" let g:airline#extensions#tagbar#flags='fs'
-" nmap <leader>1 <Plug>AirlineSelectTab1
-" nmap <leader>2 <Plug>AirlineSelectTab2
-" nmap <leader>3 <Plug>AirlineSelectTab3
-" nmap <leader>4 <Plug>AirlineSelectTab4
-" nmap <leader>5 <Plug>AirlineSelectTab5
-" nmap <leader>6 <Plug>AirlineSelectTab6
-" nmap <leader>7 <Plug>AirlineSelectTab7
-" nmap <leader>8 <Plug>AirlineSelectTab8
-" nmap <leader>9 <Plug>AirlineSelectTab9
+" Truncate all path sections but the last one, e.g. foo/bar/baz => f/b/baz
+let g:airline#extensions#branch#format = 2
+" Display tabs and buffers for CtrlSpace
+let g:airline#extensions#tabline#enabled = 1
+" Uniquify buffers names with similar filename, suppressing common parts of
+" paths
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+" Do not show parent directories for unique filename
+let g:airline#extensions#tabline#fnamemod=':t'
+" Quickly select tab
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>- <Plug>AirlineSelectPrevTab
+nmap <leader>+ <Plug>AirlineSelectNextTab
 
 " Tagbar
 let g:tagbar_compact=1
@@ -299,6 +304,9 @@ nmap <silent><leader>tt :TagbarOpenAutoClose<CR>
 " let g:ctrlspace_ignored_files='\v\.(exe|obj|mak|r45|res|s45|ewp|eww|ewd|resc|lng|xcl|xls)$'
 " let g:ctrlspace_ignored_files='\v^(.*hs)@!'
 let g:ctrlspace_ignored_files='\v^(.*\.(hs|cpp|c|h|py|sh|html|js|json)$)@!'
+" Integration with airline
+" TODO: check if it is necessary!!!
+let g:CtrlSpaceStatuslineFunction = "airline#extensions#ctrlspace#statusline()"
 
 
 " diff options
