@@ -5,7 +5,7 @@ URxvt.font: xft:PragmataPro:size=12
 ! URxvt.font: xft:Monospace:size=12
 
 *.foreground:   #dedede
-*.background:   #2d2d2d
+*.background:   #444444
 *.cursorColor:  #dedede
 
 ! black

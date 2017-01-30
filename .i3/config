@@ -6,7 +6,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Sans 11
+font pango:Noto Sans, Sans 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -139,12 +139,34 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Colors
+set $base_bg #444444
+set $sel_bg  #686868
+set $acc_bg  #f0544c
+set $base_fg #dddddd
+set $sel_fg  #ffffff
+
+# class                 border   backgr.  text     indicator child_border
+client.focused          $acc_bg  $acc_bg  $sel_fg  #2e9ef4   $acc_bg
+client.focused_inactive $sel_bg  $sel_bg  $sel_fg  $base_bg  $base_bg
+client.unfocused        $base_bg $base_bg $base_fg $base_bg  $base_bg
+client.urgent           #2f343a  #900000  #ffffff  #900000   #900000
+client.placeholder      #000000  $sel_bg  $sel_fg  #000000   $sel_bg
+
+client.background       $base_bg
+
 # Start i3bar to display a workspace bar (plus the system information i3blocks
 # finds out, if available)
 bar {
         status_command i3blocks
         position top
         strip_workspace_numbers yes
+        colors {
+            background $base_bg
+            statusline $base_fg
+            focused_workspace $sel_bg $sel_bg $sel_fg
+            inactive_workspace $base_bg $base_bg $base_fg
+        }
 }
 
 # Autostart list
@@ -155,6 +177,9 @@ exec xset b off # turn off annoying beep sound
 
 # Hide borders on workspaces with only one window visible
 hide_edge_borders smart
+
+# Hide tiling window title
+for_window [tiling] border pixel 2
 
 # Automatic back-and-forth when switching to the current workspace
 workspace_auto_back_and_forth yes
