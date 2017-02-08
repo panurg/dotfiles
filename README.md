@@ -35,6 +35,11 @@ config add .bashrc
 config commit -m "Add bashrc"
 config push
 ```
+Download vim-plug for vim:
+```bash
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
 
 ## Dependencies list
 1. i3blocks
@@ -43,4 +48,3 @@ config push
 1. i3lock
 1. transmission-gtk
 1. setxkbmap
-1. xtitle
