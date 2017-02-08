@@ -140,7 +140,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Colors
-set $base_bg #444444
+set $base_bg #2d2d2d
 set $sel_bg  #686868
 set $acc_bg  #f0544c
 set $base_fg #dddddd
