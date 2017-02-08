@@ -26,15 +26,10 @@ if has('gui_running')
         set linespace=0
     else
         set guifont=PragmataPro\ Mono\ 12,Consolas\ 10
-        " set lines=65
-        " set columns=150
-        " winpos 350 80
-        " fixing problem with arrow symbols
-        " set linespace=1
     endif
 else
    if !has('win32') && !has('win64')
-      " set t_Co=256
+      set t_Co=256
    endif
 endif
 
@@ -45,56 +40,25 @@ if has('mouse')
     set mousehide
 endif
 
-" vundle - plugin manager
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-if has('win32') || has('win64')
-    " workaround for MERA proxy
-    let g:vundle_default_git_proto='https'
-endif
+call plug#begin()
 
-call vundle#rc()
+Plug 'tomtom/tcomment_vim'
+Plug 'morhetz/gruvbox'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'tpope/vim-fugitive'
+Plug 'bling/vim-airline'
+Plug 'szw/vim-ctrlspace'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tommcdo/vim-exchange'
 
-Plugin 'gmarik/vundle'
-" Plugin 'tpope/vim-surround'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-" Plugin 'jnurmine/Zenburn'
-Plugin 'morhetz/gruvbox'
-" Plugin 'Lokaltog/powerline'
-Plugin 'scrooloose/nerdtree'
-" Plugin 'eclim', {'pinned': 1}
-if has('win32') || has('win64')
-    Plugin 'Valloric/YouCompleteMe', {'name': 'YouCompleteMe_win', 'pinned': 1}
-else
-    Plugin 'Valloric/YouCompleteMe'
-endif
-Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
-Plugin 'kien/ctrlp.vim'
-" Plugin 'airblade/vim-gitgutter'
-Plugin 'majutsushi/tagbar'
-" Plugin 'bling/vim-bufferline'
-Plugin 'szw/vim-ctrlspace'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'tommcdo/vim-exchange'
-
-filetype plugin indent on
-
-" eclim
-" map <silent> <Leader>pt :ProjectTreeToggle<CR>
-" map <silent> <Leader>pT :ProjectsTree<CR>
-" let g:EclimProjectTreeExpandPathOnOpen=1
-" YCM support
-" let g:EclimCompletionMethod='omnifunc'
+call plug#end()
 
 " colors
-colorscheme gruvbox
-syntax on
 set background=dark
 let g:gruvbox_contrast_dark='soft'
 let g:gruvbox_invert_selection=0
+let g:gruvbox_italicize_strings=1
+colorscheme gruvbox
 
 " search options
 set ignorecase
@@ -125,12 +89,6 @@ set expandtab
 
 " Invisible symbols
 set list
-" set listchars=tab:\>\-,trail:·
-" set listchars=tab:\▸\·,trail:·,eol:¬
-" set listchars=tab:⁞\ ,trail:·
-" set listchars=tab:»\ ,trail:·,eol:¶,extends:→,precedes:←,nbsp:×
-" set listchars=tab:▸\ ,eol:¬ # TextMate
-" set listchars=tab:»\ ,trail:·,eol:¶,extends:>,precedes:<,nbsp:_
 set listchars=tab:\¦\ ,trail:·,extends:→,precedes:←,nbsp:×
 
 " Separators and character to fill
@@ -149,9 +107,6 @@ set foldmethod=syntax
 set foldcolumn=2
 set foldlevelstart=99
 
-" session options
-set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize,winpos,resize
-
 " nice command-line completions
 set wildmenu
 set wildmode=list,longest,full
@@ -160,7 +115,6 @@ set wcm=<Tab>
 " text margins and wrapping
 set wrap
 set linebreak
-" set showbreak=->\ 
 set showbreak=↪\ 
 set textwidth=80
 set colorcolumn=+1
@@ -168,10 +122,10 @@ set colorcolumn=+1
 " highlight current line
 set cursorline
 
-" tabs settings
+" always show tabs line
 set showtabline=2
 
-" reread file if it have been changed somwhere else
+" reread file if it have been changed somewhere else
 set autoread
 
 " ask to overwrite file
@@ -185,14 +139,14 @@ set pumheight=10
 set completeopt=menu,menuone,longest,preview
 set previewheight=5
 
-" buffer settings
-" switching between buffers
-set switchbuf=useopen " wtf???
+" when switching between buffers, jump to the first open window that contains
+" specified buffer considering all tabs
+set switchbuf=usetab
 " don't save files during switching between buffers
 set hidden
 
 
-" Useful mappings
+" Mappings
 " fix for annoying typo
 command! W :w
 command! Bd :bd
@@ -215,9 +169,11 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-" backups
-" don't use them
+" don't make any backups, use git instead
 set nobackup
+set nowritebackup
+
+" keep all buffers in memory
 set noswapfile
 
 " maximize history
@@ -227,12 +183,6 @@ set history=1000
 set spelllang=en_us,ru_ru
 set spell
 set spellsuggest=best,10
-
-" ignore object files
-" set wildignore+=*.obj,*.exe,*.tlog,*.mak,*.pyc,*.res,*.lng,*.bi,*.lib,*.resc,*.r45,*.vcxproj,*.sbr
-
-" NERDTree
-map <silent> <Leader>nt :NERDTreeToggle<CR>
 
 " use xmllint for pretty formating
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
@@ -291,15 +241,6 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 nmap <leader>- <Plug>AirlineSelectPrevTab
 nmap <leader>+ <Plug>AirlineSelectNextTab
 
-" Tagbar
-let g:tagbar_compact=1
-let g:tagbar_show_linenumbers=-1
-let g:tagbar_iconchars=['▸', '▾']
-highlight TagbarVisibilityPrivate ctermfg=167 guifg=#fb4934
-highlight TagbarVisibilityProtected ctermfg=175 guifg=#d3869b
-highlight TagbarVisibilityPublic ctermfg=108 guifg=#8ec07c
-nmap <silent><leader>tt :TagbarOpenAutoClose<CR>
-
 " ctrlspace
 " let g:ctrlspace_ignored_files='\v\.(exe|obj|mak|r45|res|s45|ewp|eww|ewd|resc|lng|xcl|xls)$'
 " let g:ctrlspace_ignored_files='\v^(.*hs)@!'
@@ -308,31 +249,5 @@ let g:ctrlspace_ignored_files='\v^(.*\.(hs|cpp|c|h|py|sh|html|js|json)$)@!'
 " TODO: check if it is necessary!!!
 let g:CtrlSpaceStatuslineFunction = "airline#extensions#ctrlspace#statusline()"
 
-
 " diff options
-set diffopt=filler,vertical
-
-" YouCompleteMe and UltiSnips integration
-" function! g:UltiSnips_Complete()
-"    call UltiSnips#ExpandSnippet()
-"    if g:ulti_expand_res == 0
-"       if pumvisible()
-"          return "\<C-n>"
-"       else
-"          call UltiSnips#JumpForwards()
-"          if g:ulti_jump_forwards_res == 0
-"             return "\<TAB>"
-"          endif
-"       endif
-"    endif
-"    return ""
-" endfunction
-
-" au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsListSnippets="<c-e>"
-" this mapping Enter key to <C-y> to chose the current highlight item 
-" and close the selection list, same as other IDEs.
-" CONFLICT with some plugins like tpope/Endwise
-" inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
+set diffopt=filler,vertical,iwhite
