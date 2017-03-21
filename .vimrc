@@ -248,6 +248,10 @@ let g:ctrlspace_ignored_files='\v^(.*\.(hs|cpp|c|h|py|sh|html|js|json)$)@!'
 " Integration with airline
 " TODO: check if it is necessary!!!
 let g:CtrlSpaceStatuslineFunction = "airline#extensions#ctrlspace#statusline()"
+" Save the active workspace on switching to another or clearing the current one
+let g:CtrlSpaceSaveWorkspaceOnSwitch = 1
+" Loads the last active workspace on startup
+let g:CtrlSpaceLoadLastWorkspaceOnStart = 1
 
 " diff options
 set diffopt=filler,vertical,iwhite
