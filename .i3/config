@@ -139,6 +139,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# work with scratchpad
+bindsym $mod+grave scratchpad show
+bindsym $mod+Shift+grave move scratchpad
+
 # Colors
 set $base_bg #444444
 set $sel_bg  #686868
@@ -188,4 +192,4 @@ for_window [class="Galculator"] floating enable
 workspace_auto_back_and_forth yes
 
 # Start from desktop workspace
-exec i3-msg workspace number $workspace4
+exec i3-msg "workspace number $workspace1; workspace number $workspace4"
