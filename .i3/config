@@ -65,46 +65,34 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+d focus child
 
-# define workspace names
-set $workspace1   "1:<sup>1</sup><b>files</b>"
-set $workspace2   "2:<sup>2</sup><b>browser</b>"
-set $workspace3   "3:<sup>3</sup><b>gvim</b>"
-set $workspace4   "4:<sup>4</sup><b>desktop</b>"
-set $workspace5   "5"
-set $workspace6   "6"
-set $workspace7   "7"
-set $workspace8   "8"
-set $workspace9   "9"
-set $workspace10 "10"
-
 # switch to workspace
-bindsym $mod+1 workspace number $workspace1
-bindsym $mod+2 workspace number $workspace2
-bindsym $mod+3 workspace number $workspace3
-bindsym $mod+4 workspace number $workspace4
-bindsym $mod+5 workspace number $workspace5
-bindsym $mod+6 workspace number $workspace6
-bindsym $mod+7 workspace number $workspace7
-bindsym $mod+8 workspace number $workspace8
-bindsym $mod+9 workspace number $workspace9
-bindsym $mod+0 workspace number $workspace10
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 0
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $workspace1
-bindsym $mod+Shift+2 move container to workspace number $workspace2
-bindsym $mod+Shift+3 move container to workspace number $workspace3
-bindsym $mod+Shift+4 move container to workspace number $workspace4
-bindsym $mod+Shift+5 move container to workspace number $workspace5
-bindsym $mod+Shift+6 move container to workspace number $workspace6
-bindsym $mod+Shift+7 move container to workspace number $workspace7
-bindsym $mod+Shift+8 move container to workspace number $workspace8
-bindsym $mod+Shift+9 move container to workspace number $workspace9
-bindsym $mod+Shift+0 move container to workspace number $workspace10
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 0
 
 # assign applications to workspaces
-assign [class="Chromium-browser"] $workspace2
-assign [class="Gvim"] $workspace3
-assign [class="Steam"] $workspace4
+assign [class="Chromium-browser"] 2
+assign [class="Gvim"] 3
+assign [class="Steam"] 4
 
 # reload the configuration file
 # bindsym $mod+Shift+c reload
@@ -162,21 +150,12 @@ client.background       $base_bg
 # Start i3bar to display a workspace bar (plus the system information i3blocks
 # finds out, if available)
 bar {
-        status_command i3blocks
-        position top
-        strip_workspace_numbers yes
-        colors {
-            background $base_bg
-            statusline $base_fg
-            focused_workspace $sel_bg $sel_bg $sel_fg
-            inactive_workspace $base_bg $base_bg $base_fg
-        }
+    i3bar_command $HOME/.config/polybar/launch.sh
 }
 
 # Autostart list
 exec transmission-gtk -m
 exec urxvtd -q -f -o
-exec setxkbmap -layout us,ru -option 'grp:caps_toggle'
 exec xset b off # turn off annoying beep sound
 
 # Hide borders on workspaces with only one window visible
@@ -192,4 +171,4 @@ for_window [class="Galculator"] floating enable
 workspace_auto_back_and_forth yes
 
 # Start from desktop workspace
-exec i3-msg "workspace number $workspace1; workspace number $workspace4"
+exec i3-msg 'workspace number 4'

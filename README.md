@@ -42,9 +42,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ```
 
 ## Dependencies list
-1. i3blocks
+1. polybar
 1. rofi
 1. urxvtd
 1. i3lock
 1. transmission-gtk
-1. setxkbmap

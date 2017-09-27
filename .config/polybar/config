@@ -1,0 +1,153 @@
+[colors]
+background = #444444
+background-alt = #686868
+foreground = #dddddd
+foreground-alt = #ffffff
+accent = #f0544c
+
+[bar/root]
+fixed-center = false
+height = 50
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 4
+module-margin-left = 2
+font-0 = Noto Sans:size=20;5
+font-1 = FontAwesome:size=20;5
+font-2 = IcoMoon\-Free:size=20;5
+font-3 = Noto Sans:size=24:weight=bold;5
+font-4 = icomoon:size=20;5
+font-5 = Noto Emoji:size=20:weight=bold;5
+modules-left = i3
+modules-center = xwindow
+modules-right = xkeyboard backlight volume wlan battery date powermenu
+tray-position = right
+tray-padding = 0
+; wm-restack = i3
+; override-redirect = true
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+[module/xwindow]
+type = internal/xwindow
+label-maxlen = 120
+
+[module/xkeyboard]
+type = internal/xkeyboard
+format = <label-layout>
+label-layout-font = 4
+
+[module/i3]
+type = internal/i3
+format = <label-state>
+wrapping-scroll = false
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-default = 
+label-focused = %icon%
+label-focused-background = ${colors.background-alt}
+label-focused-underline = ${colors.accent}
+label-focused-underline-size = 8
+label-focused-padding = 2
+label-unfocused = %icon%
+label-unfocused-padding = 2
+label-urgent = %icon%
+label-urgent-background = ${colors.accent}
+label-urgent-padding = 2
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+format = <ramp>
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
+[module/wlan]
+type = internal/network
+interface = wlp60s0
+interval = 3.0
+;ping-interval = 3
+
+; format-connected = <ramp-signal> <label-connected>
+; format-connected-underline = #9f78e1
+label-connected = %essid%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+interval = 1
+date =
+date-alt = %e %a w%V
+time = %R
+time-alt = ${self.time}
+label = %date% %{T4}%time%%{T-}
+
+[module/volume]
+type = internal/volume
+format-volume = <ramp-volume>
+speaker-mixer = Speaker
+headphone-mixer = Headphone
+headphone-id = 12
+mapped = true
+label-muted = 
+label-muted-foreground = ${colors.accent}
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-headphones-0 =  
+ramp-headphones-1 =  
+ramp-headphones-2 =  
+ramp-headphones-3 =  
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+time-format = %_Hh %_Mm
+format-charging = <label-charging> <animation-charging>
+format-discharging = <label-discharging> <ramp-capacity>
+format-full = 
+label-charging = %time%
+label-discharging = %time%
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+
+[module/powermenu]
+type = custom/menu
+expand-right = false
+label-open = 
+label-close = 
+menu-0-0 = 
+menu-0-0-exec = sudo reboot
+menu-0-0-foreground = ${colors.accent}
+menu-0-0-margin-right = 2
+menu-0-1 = 
+menu-0-1-exec = sudo poweroff
+menu-0-1-foreground = ${colors.accent}
+menu-0-1-margin-right = 2
