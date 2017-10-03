@@ -1,9 +1,0 @@
-interval=5
-signal=10
-
-[keymap]
-
-[time]
-command=echo "`date +'%e %a w%V'` <b>`date +%R`</b>"
-interval=1
-markup=pango
