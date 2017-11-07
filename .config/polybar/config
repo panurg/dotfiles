@@ -24,7 +24,6 @@ modules-center = xwindow
 modules-right = xkeyboard volume wlan date powermenu
 tray-position = right
 tray-padding = 0
-tray-maxsize = 50
 ; wm-restack = i3
 ; override-redirect = true
 scroll-up = i3wm-wsnext
