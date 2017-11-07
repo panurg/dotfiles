@@ -93,6 +93,8 @@ alias fd='fastboot devices'
 alias ffb='fastboot flash boot'
 alias ffs='fastboot flash system'
 alias ffa='ffb && ffs $OUT/system.img.gz && fr'
+alias asit="adb shell input text"
+alias asik="adb shell input keyevent"
 
 # Build settings
 export USE_CCACHE=1
