@@ -92,7 +92,7 @@ bindsym $mod+Shift+0 move container to workspace number 0
 # assign applications to workspaces
 assign [class="Chromium-browser"] 2
 assign [class="Gvim"] 3
-assign [class="Steam"] 4
+assign [class="Steam"] 5
 
 # reload the configuration file
 # bindsym $mod+Shift+c reload
@@ -129,7 +129,7 @@ bindsym $mod+r mode "resize"
 
 # work with scratchpad
 bindsym $mod+grave scratchpad show
-bindsym $mod+Shift+grave move scratchpad
+bindsym $mod+Shift+grave move scratchpad, border pixel 2
 
 # Colors
 set $base_bg #444444

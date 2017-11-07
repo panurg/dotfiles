@@ -40,12 +40,13 @@ label-layout-font = 4
 
 [module/i3]
 type = internal/i3
+index-sort = true
 format = <label-state>
 wrapping-scroll = false
-ws-icon-0 = 1;
+ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
-ws-icon-3 = 4;
+ws-icon-3 = 4;
 ws-icon-default = 
 label-focused = %icon%
 label-focused-background = ${colors.background-alt}
@@ -54,6 +55,8 @@ label-focused-underline-size = 8
 label-focused-padding = 2
 label-unfocused = %icon%
 label-unfocused-padding = 2
+label-visible = %icon%
+label-visible-padding = 2
 label-urgent = %icon%
 label-urgent-background = ${colors.accent}
 label-urgent-padding = 2
