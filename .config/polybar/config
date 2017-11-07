@@ -1,26 +1,27 @@
 [colors]
-background = #444444
+background = #2d2d2d
 background-alt = #686868
 foreground = #dddddd
 foreground-alt = #ffffff
 accent = #f0544c
 
 [bar/root]
+monitor=HDMI-0
 fixed-center = false
-height = 50
+height = 30
 background = ${colors.background}
 foreground = ${colors.foreground}
 line-size = 4
 module-margin-left = 2
-font-0 = Noto Sans:size=20;5
-font-1 = FontAwesome:size=20;5
-font-2 = IcoMoon\-Free:size=20;5
-font-3 = Noto Sans:size=24:weight=bold;5
-font-4 = icomoon:size=20;5
-font-5 = Noto Emoji:size=20:weight=bold;5
+font-0 = Noto Sans:size=12;2
+font-1 = FontAwesome:size=12;2
+font-2 = IcoMoon\-Free:size=12;2
+font-3 = Noto Sans:size=14:weight=bold;2
+font-4 = icomoon:size=12;2
+font-5 = Noto Emoji:size=12:weight=bold;2
 modules-left = i3
 modules-center = xwindow
-modules-right = xkeyboard backlight volume wlan battery date powermenu
+modules-right = xkeyboard volume wlan date powermenu
 tray-position = right
 tray-padding = 0
 tray-maxsize = 50
@@ -61,16 +62,6 @@ label-urgent = %icon%
 label-urgent-background = ${colors.accent}
 label-urgent-padding = 2
 
-[module/backlight]
-type = internal/backlight
-card = intel_backlight
-format = <ramp>
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
-
 [module/wlan]
 type = internal/network
 interface = wlp60s0
@@ -106,9 +97,6 @@ label = %date% %{T4}%time%%{T-}
 [module/volume]
 type = internal/volume
 format-volume = <ramp-volume>
-speaker-mixer = Speaker
-headphone-mixer = Headphone
-headphone-id = 12
 mapped = true
 label-muted = 
 label-muted-foreground = ${colors.accent}
@@ -116,31 +104,6 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
-ramp-headphones-0 =  
-ramp-headphones-1 =  
-ramp-headphones-2 =  
-ramp-headphones-3 =  
-
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = AC
-time-format = %_Hh %_Mm
-format-charging = <label-charging> <animation-charging>
-format-discharging = <label-discharging> <ramp-capacity>
-format-full = 
-label-charging = %time%
-label-discharging = %time%
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
 
 [module/powermenu]
 type = custom/menu
