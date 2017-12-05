@@ -212,6 +212,14 @@ map <silent> <Leader>yg :YcmCompleter GoTo<CR>
 set laststatus=2
 " Don't display current mode
 set noshowmode
+" Prepare dictionary for custom symbols
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+" Shorten spell detection indicator
+let g:airline_symbols.spell = 'Ꞩ'
+" Do not show spell lang
+let g:airline_detect_spelllang=0
 " Use fancy powerline symbols
 let g:airline_powerline_fonts=1
 " Disable use of %(%) grouping items in the statusline, fixes bleeding color
