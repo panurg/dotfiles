@@ -50,6 +50,7 @@ Plug 'bling/vim-airline'
 Plug 'szw/vim-ctrlspace'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tommcdo/vim-exchange'
+Plug 'machakann/vim-highlightedyank'
 
 call plug#end()
 
@@ -252,6 +253,9 @@ let g:CtrlSpaceStatuslineFunction = "airline#extensions#ctrlspace#statusline()"
 let g:CtrlSpaceSaveWorkspaceOnSwitch = 1
 " Loads the last active workspace on startup
 let g:CtrlSpaceLoadLastWorkspaceOnStart = 1
+
+" highlightedyank
+map y <Plug>(highlightedyank)
 
 " diff options
 set diffopt=filler,vertical,iwhite
