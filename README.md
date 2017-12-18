@@ -46,4 +46,4 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 1. rofi
 1. urxvtd
 1. i3lock
-1. transmission-gtk
+1. feh
