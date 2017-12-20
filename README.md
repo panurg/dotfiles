@@ -47,3 +47,4 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 1. urxvtd
 1. i3lock
 1. feh
+1. compton
