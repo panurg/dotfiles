@@ -54,7 +54,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space \
+    floating toggle; \
+    [tiling] border pixel 2; \
+    [floating] border normal 2
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -131,7 +134,7 @@ bindsym $mod+r mode "resize"
 
 # work with scratchpad
 bindsym $mod+grave scratchpad show
-bindsym $mod+Shift+grave move scratchpad, border pixel 2
+bindsym $mod+Shift+grave border normal 2; move scratchpad
 
 # Colors
 set $base_bg #2d2d2d
@@ -164,7 +167,8 @@ exec xset b off # turn off annoying beep sound
 hide_edge_borders smart
 
 # Hide tiling window title
-for_window [tiling] border pixel 2
+new_window pixel 2
+new_float normal 2
 
 # Floating windows
 for_window [class="Galculator"] floating enable
