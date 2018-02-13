@@ -18,6 +18,7 @@ font-2 = IcoMoon\-Free:size=20;5
 font-3 = Noto Sans:size=24:weight=bold;5
 font-4 = icomoon:size=20;5
 font-5 = Noto Emoji:size=20:weight=bold;5
+font-6 = icomoon\-wifi:size=20;5
 modules-left = i3
 modules-center = xwindow
 modules-right = xkeyboard backlight volume wlan battery date powermenu
@@ -76,24 +77,15 @@ ramp-4 = 🌑
 type = internal/network
 interface = wlp60s0
 interval = 3.0
-;ping-interval = 3
 
-; format-connected = <ramp-signal> <label-connected>
-; format-connected-underline = #9f78e1
-label-connected = %essid%
+format-connected = <ramp-signal>
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected =
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
 
 [module/date]
 type = internal/date
