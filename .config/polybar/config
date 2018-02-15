@@ -21,7 +21,7 @@ font-5 = Noto Emoji:size=20:weight=bold;5
 font-6 = icomoon\-wifi:size=20;5
 modules-left = i3
 modules-center = xwindow
-modules-right = xkeyboard backlight volume wlan battery date powermenu
+modules-right = xkeyboard backlight volume wlan battery date
 tray-position = right
 tray-padding = 0
 tray-maxsize = 50
@@ -88,6 +88,7 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 
 [module/date]
+label-margin-right = 1
 type = internal/date
 interval = 1
 date =
@@ -134,17 +135,3 @@ animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-
-[module/powermenu]
-type = custom/menu
-expand-right = false
-label-open = 
-label-close = 
-menu-0-0 = 
-menu-0-0-exec = sudo reboot
-menu-0-0-foreground = ${colors.accent}
-menu-0-0-margin-right = 2
-menu-0-1 = 
-menu-0-1-exec = sudo poweroff
-menu-0-1-foreground = ${colors.accent}
-menu-0-1-margin-right = 2
