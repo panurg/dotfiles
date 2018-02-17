@@ -80,7 +80,10 @@ type = internal/network
 interface = wlp60s0
 interval = 3.0
 
-format-connected = <ramp-signal>
+format-connected = <label-connected> <ramp-signal>
+label-connected =
+label-alt-connected =  %essid%  %downspeed%  %upspeed%
+label-alt-connected-foreground = ${colors.foreground-alt}
 
 label-disconnected =
 
