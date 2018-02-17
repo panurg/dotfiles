@@ -2,7 +2,7 @@
 background = #444444
 background-alt = #686868
 foreground = #dddddd
-foreground-alt = #ffffff
+foreground-alt = #919191
 accent = #f0544c
 
 [bar/root]
@@ -19,7 +19,8 @@ font-3 = Noto Sans:size=24:weight=bold;5
 font-4 = icomoon:size=20;5
 font-5 = Noto Emoji:size=20:weight=bold;5
 font-6 = icomoon\-wifi:size=20;5
-modules-left = i3
+font-7 = Noto Sans:size=17;5
+modules-left = i3 mpd
 modules-center = xwindow
 modules-right = xkeyboard backlight volume wlan battery date
 tray-position = right
@@ -49,6 +50,7 @@ ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
+ws-icon-5 = 9;
 ws-icon-default = 
 label-focused = %icon%
 label-focused-background = ${colors.background-alt}
@@ -135,3 +137,14 @@ animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
+
+[module/mpd]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+password = ${env:MPD_PASSWORD:}
+interval = 1
+format-online =
+format-playing = <label-song>
+format-playing-foreground = ${colors.foreground-alt}
+label-song-font = 8
