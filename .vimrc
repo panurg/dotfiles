@@ -51,6 +51,7 @@ Plug 'szw/vim-ctrlspace'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tommcdo/vim-exchange'
 Plug 'machakann/vim-highlightedyank'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -267,3 +268,6 @@ map y <Plug>(highlightedyank)
 
 " diff options
 set diffopt=filler,vertical,iwhite
+
+" gitgutter
+set updatetime=100
