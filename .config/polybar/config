@@ -79,14 +79,11 @@ ramp-4 = 🌑
 type = internal/network
 interface = wlp60s0
 interval = 3.0
-
 format-connected = <label-connected> <ramp-signal>
 label-connected =
 label-alt-connected =  %essid%  %downspeed%  %upspeed%
 label-alt-connected-foreground = ${colors.foreground-alt}
-
 label-disconnected =
-
 ramp-signal-0 = 
 ramp-signal-1 = 
 ramp-signal-2 = 
@@ -124,13 +121,18 @@ ramp-headphones-3 =  
 type = internal/battery
 battery = BAT0
 adapter = AC
-time-format = %_Hh %_Mm
+time-format = %R
 format-charging = <label-charging> <animation-charging>
 format-discharging = <label-discharging> <ramp-capacity>
 format-full = 
-label-charging = %time%
-label-discharging = %time%
+label-charging =
+label-alt-charging =  %percentage%%  %time%
+label-alt-charging-foreground = ${colors.foreground-alt}
+label-discharging =
+label-alt-discharging =  %percentage%%  %time%
+label-alt-discharging-foreground = ${colors.foreground-alt}
 ramp-capacity-0 = 
+ramp-capacity-0-foreground = ${colors.accent}
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
