@@ -98,6 +98,7 @@ assign [class="Gvim"] 3
 assign [class="Steam"] 6
 assign [class="TelegramDesktop"] 5
 assign [class="Slack"] 5
+assign [class="Sonata"] 9
 
 # reload the configuration file
 # bindsym $mod+Shift+c reload

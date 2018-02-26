@@ -2,7 +2,7 @@
 background = #2d2d2d
 background-alt = #686868
 foreground = #dddddd
-foreground-alt = #ffffff
+foreground-alt = #919191
 accent = #f0544c
 
 [bar/root]
@@ -19,9 +19,11 @@ font-2 = IcoMoon\-Free:size=12;2
 font-3 = Noto Sans:size=14:weight=bold;2
 font-4 = icomoon:size=12;2
 font-5 = Noto Emoji:size=12:weight=bold;2
-modules-left = i3
+font-6 = icomoon\-wifi:size=20;5
+font-7 = Noto Sans:size=17;5
+modules-left = i3 mpd
 modules-center = xwindow
-modules-right = xkeyboard volume wlan date powermenu
+modules-right = xkeyboard volume wlan date
 tray-position = right
 tray-padding = 0
 ; wm-restack = i3
@@ -48,6 +50,7 @@ ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
+ws-icon-5 = 9;
 ws-icon-default = 
 label-focused = %icon%
 label-focused-background = ${colors.background-alt}
@@ -66,30 +69,25 @@ label-urgent-padding = 2
 type = internal/network
 interface = wlp60s0
 interval = 3.0
-;ping-interval = 3
 
-; format-connected = <ramp-signal> <label-connected>
-; format-connected-underline = #9f78e1
-label-connected = %essid%
+format-connected = <label-connected> <ramp-signal>
+label-connected =
+label-alt-connected =  %essid%  %downspeed%  %upspeed%
+label-alt-connected-foreground = ${colors.foreground-alt}
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected =
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
 
 [module/date]
+label-margin-right = 1
 type = internal/date
 interval = 1
 date =
-date-alt = %e %a w%V
+date-alt = %{F#919191} %e %a w%V%{F-}
 time = %R
 time-alt = ${self.time}
 label = %date% %{T4}%time%%{T-}
@@ -105,16 +103,13 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
 
-[module/powermenu]
-type = custom/menu
-expand-right = false
-label-open = 
-label-close = 
-menu-0-0 = 
-menu-0-0-exec = sudo reboot
-menu-0-0-foreground = ${colors.accent}
-menu-0-0-margin-right = 2
-menu-0-1 = 
-menu-0-1-exec = sudo poweroff
-menu-0-1-foreground = ${colors.accent}
-menu-0-1-margin-right = 2
+[module/mpd]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+password = ${env:MPD_PASSWORD:}
+interval = 1
+format-online =
+format-playing = <label-song>
+format-playing-foreground = ${colors.foreground-alt}
+label-song-font = 8
