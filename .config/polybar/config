@@ -23,7 +23,7 @@ font-6 = icomoon\-wifi:size=20;5
 font-7 = Noto Sans:size=17;5
 modules-left = i3 mpd
 modules-center = xwindow
-modules-right = xkeyboard volume wlan date
+modules-right = xkeyboard volume date
 tray-position = right
 tray-padding = 0
 ; wm-restack = i3
@@ -64,23 +64,6 @@ label-visible-padding = 2
 label-urgent = %icon%
 label-urgent-background = ${colors.accent}
 label-urgent-padding = 2
-
-[module/wlan]
-type = internal/network
-interface = wlp60s0
-interval = 3.0
-
-format-connected = <label-connected> <ramp-signal>
-label-connected =
-label-alt-connected =  %essid%  %downspeed%  %upspeed%
-label-alt-connected-foreground = ${colors.foreground-alt}
-
-label-disconnected =
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
 
 [module/date]
 label-margin-right = 1
