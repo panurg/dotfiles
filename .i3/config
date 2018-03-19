@@ -160,7 +160,7 @@ bar {
 }
 
 # Autostart list
-exec transmission-gtk -m
+exec $HOME/.screenlayout/double.sh
 exec urxvtd -q -f -o
 exec xset b off # turn off annoying beep sound
 

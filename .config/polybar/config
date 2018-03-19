@@ -6,26 +6,27 @@ foreground-alt = #919191
 accent = #f0544c
 
 [bar/root]
+; monitor=VGA-0
 fixed-center = false
-height = 50
+height = 30
 background = ${colors.background}
 foreground = ${colors.foreground}
 line-size = 4
 module-margin-left = 2
-font-0 = Noto Sans:size=20;5
-font-1 = FontAwesome:size=20;5
-font-2 = IcoMoon\-Free:size=20;5
-font-3 = Noto Sans:size=24:weight=bold;5
-font-4 = icomoon:size=20;5
-font-5 = Noto Emoji:size=20:weight=bold;5
-font-6 = icomoon\-wifi:size=20;5
-font-7 = Noto Sans:size=17;5
+font-0 = Noto Sans:size=12;2
+font-1 = FontAwesome:size=12;2
+font-2 = IcoMoon\-Free:size=12;2
+font-3 = Noto Sans:size=14:weight=bold;2
+font-4 = icomoon:size=12;2
+font-5 = Noto Emoji:size=12:weight=bold;2
+font-6 = icomoon\-wifi:size=12;2
+font-7 = Noto Sans:size=10;2
 modules-left = i3 mpd
 modules-center = xwindow
-modules-right = xkeyboard backlight volume wlan battery date
+modules-right = xkeyboard volume date
 tray-position = right
 tray-padding = 0
-tray-maxsize = 50
+tray-maxsize = 30
 ; wm-restack = i3
 ; override-redirect = true
 scroll-up = i3wm-wsnext
@@ -65,31 +66,6 @@ label-urgent = %icon%
 label-urgent-background = ${colors.accent}
 label-urgent-padding = 2
 
-[module/backlight]
-type = internal/backlight
-card = intel_backlight
-format = <ramp>
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
-
-[module/wlan]
-type = internal/network
-interface = wlp60s0
-interval = 3.0
-format-connected = <label-connected> <ramp-signal>
-label-connected =
-label-alt-connected =  %essid%  %downspeed%  %upspeed%
-label-alt-connected-foreground = ${colors.foreground-alt}
-label-alt-connected-font = 8
-label-disconnected =
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-
 [module/date]
 label-margin-right = 1
 type = internal/date
@@ -101,11 +77,10 @@ time-alt = ${self.time}
 label = %date% %{T4}%time%%{T-}
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 format-volume = <ramp-volume>
-speaker-mixer = Speaker
 headphone-mixer = Headphone
-headphone-id = 15
+headphone-id = 35
 mapped = true
 label-muted = 
 label-muted-foreground = ${colors.accent}
@@ -117,34 +92,6 @@ ramp-headphones-0 =  
 ramp-headphones-1 =  
 ramp-headphones-2 =  
 ramp-headphones-3 =  
-
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = AC
-time-format = %R
-format-charging = <label-charging> <animation-charging>
-format-discharging = <label-discharging> <ramp-capacity>
-format-full = 
-label-charging =
-label-alt-charging =  %percentage%%  %time%
-label-alt-charging-foreground = ${colors.foreground-alt}
-label-alt-charging-font = 8
-label-discharging =
-label-alt-discharging =  %percentage%%  %time%
-label-alt-discharging-foreground = ${colors.foreground-alt}
-label-alt-discharging-font = 8
-ramp-capacity-0 = 
-ramp-capacity-0-foreground = ${colors.accent}
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
 
 [module/mpd]
 type = internal/mpd

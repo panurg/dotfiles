@@ -49,11 +49,11 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git npm tmux tmuxinator autojump vi-mode)
+plugins=(git tmux tmuxinator autojump vi-mode)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.9.3:$(gem environment gemdir)/bin"
+export PATH="/usr/lib/ccache/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.9.3:$(gem environment gemdir)/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -62,7 +62,7 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-export EDITOR='vim'
+# export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -81,3 +81,23 @@ export EDITOR='vim'
 
 alias mux=tmuxinator
 alias config='$(which git) --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# Android-MYco
+# Aliases for speeding up work with device
+alias arb='adb reboot bootloader'
+alias ar='adb reboot'
+alias as='adb shell'
+alias al='adb logcat'
+alias fr='fastboot reboot'
+alias fd='fastboot devices'
+alias ffb='fastboot flash boot'
+alias ffs='fastboot flash system'
+alias ffa='ffb && ffs $OUT/system.img.gz && fr'
+alias asit="adb shell input text"
+alias asik="adb shell input keyevent"
+
+# Build settings
+export USE_CCACHE=1
+
+[ -f $HOME/.private.zshrc ] && source $HOME/.private.zshrc
+# end of Android-MYco
