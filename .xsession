@@ -1,5 +1,5 @@
 #!/bin/sh
 ~/.fehbg &
 telegram-desktop &
-compton -b
+compton &
 exec /usr/bin/i3
