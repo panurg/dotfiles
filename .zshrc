@@ -99,5 +99,5 @@ alias asik="adb shell input keyevent"
 # Build settings
 export USE_CCACHE=1
 
-[ -f $HOME/.private.zshrc ] && source $HOME/.private.zshrc
+[ -f $HOME/.zshrc.private ] && source $HOME/.zshrc.private
 # end of Android-MYco
