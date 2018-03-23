@@ -6,7 +6,7 @@ foreground-alt = #919191
 accent = #f0544c
 
 [bar/root]
-; monitor=VGA-0
+monitor=VGA-0
 fixed-center = false
 height = 30
 background = ${colors.background}

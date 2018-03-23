@@ -1,0 +1,12 @@
+[include]
+	path = ./.gitconfig.private
+[color]
+	ui = auto
+[merge]
+	tool = meld
+[gui]
+	fontdiff = -family PragmataPro -size 12 -weight normal -slant roman -underline 0 -overstrike 0
+[stash]
+	showPatch = true
+[core]
+	excludesfile = ~/.gitignore
