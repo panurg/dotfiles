@@ -101,3 +101,6 @@ export USE_CCACHE=1
 
 [ -f $HOME/.zshrc.private ] && source $HOME/.zshrc.private
 # end of Android-MYco
+
+# do not remove automatically inserted space when entering pipe symbol
+export ZLE_SPACE_SUFFIX_CHARS=$'|'
