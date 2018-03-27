@@ -145,7 +145,7 @@ set $base_fg #dddddd
 set $sel_fg  #ffffff
 
 # class                 border   backgr.  text     indicator child_border
-client.focused          $acc_bg  $acc_bg  $sel_fg  #2e9ef4   $acc_bg
+client.focused          $acc_bg  $acc_bg  $sel_fg  #eeeeee   $acc_bg
 client.focused_inactive $sel_bg  $sel_bg  $sel_fg  $base_bg  $base_bg
 client.unfocused        $base_bg $base_bg $base_fg $base_bg  $base_bg
 client.urgent           #2f343a  #900000  #ffffff  #900000   #900000
