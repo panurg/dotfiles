@@ -102,3 +102,5 @@ format-online =
 format-playing = <label-song>
 format-playing-foreground = ${colors.foreground-alt}
 label-song-font = 8
+
+; vim: ft=dosini
