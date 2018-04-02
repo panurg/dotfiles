@@ -3,7 +3,7 @@ URxvt*scrollTtyOutput: false
 URxvt*scrollTtyKeypress: true
 URxvt.font: xft:PragmataPro:size=12
 ! URxvt.font: xft:Monospace:size=12
-URxvt.letterSpace: -1
+URxvt.letterSpace: -2
 
 *.foreground:   #dedede
 *.background:   #444444
