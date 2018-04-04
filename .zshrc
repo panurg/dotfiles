@@ -49,7 +49,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux tmuxinator autojump vi-mode)
+plugins=(git tmux tmuxinator z vi-mode)
 
 # User configuration
 
@@ -104,3 +104,12 @@ export USE_CCACHE=1
 
 # do not remove automatically inserted space when entering pipe symbol
 export ZLE_SPACE_SUFFIX_CHARS=$'|'
+
+# integration of z and fzf
+unalias z 2> /dev/null
+_j() {
+   [ $# -gt 0 ] && _z "$*" && return
+   cd "$(_z -l 2>&1 | fzf-tmux -d 40% --nth 2.. --reverse --height 40% \
+      --inline-info | sed 's/^[0-9,.]* *//')"
+}
+alias j=_j

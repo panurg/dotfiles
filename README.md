@@ -50,3 +50,4 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 1. compton
 1. mpd
 1. dunst (>=1.2.0)
+1. fzf
