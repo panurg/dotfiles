@@ -99,6 +99,7 @@ assign [class="Steam"] 6
 assign [class="TelegramDesktop"] 5
 assign [class="Slack"] 5
 assign [class="Sonata"] 9
+assign [class="Spacefm"] 4
 
 # reload the configuration file
 # bindsym $mod+Shift+c reload
@@ -173,6 +174,7 @@ new_float normal 2
 
 # Floating windows
 for_window [class="Galculator"] floating enable
+for_window [class="Spacefm" title="Find Files"] floating enable
 
 # Automatic back-and-forth when switching to the current workspace
 workspace_auto_back_and_forth yes
