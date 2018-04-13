@@ -37,4 +37,4 @@ windows:
         - adb logcat -b radio
   - builds: lunch myco-eng
   - work: repo status
-  - ranger: ranger
+  - misc:
