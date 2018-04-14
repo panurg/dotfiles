@@ -6,6 +6,7 @@ foreground-alt = #919191
 accent = #f0544c
 
 [bar/root]
+monitor=eDP-1
 fixed-center = false
 height = 50
 background = ${colors.background}
@@ -101,7 +102,7 @@ time-alt = ${self.time}
 label = %date% %{T4}%time%%{T-}
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 format-volume = <ramp-volume>
 speaker-mixer = Speaker
 headphone-mixer = Headphone
@@ -156,3 +157,5 @@ format-online =
 format-playing = <label-song>
 format-playing-foreground = ${colors.foreground-alt}
 label-song-font = 8
+
+; vim: ft=dosini

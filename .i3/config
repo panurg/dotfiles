@@ -99,6 +99,7 @@ assign [class="Steam"] 6
 assign [class="TelegramDesktop"] 5
 assign [class="Slack"] 5
 assign [class="Sonata"] 9
+assign [class="Spacefm"] 4
 
 # reload the configuration file
 # bindsym $mod+Shift+c reload
@@ -145,7 +146,7 @@ set $base_fg #dddddd
 set $sel_fg  #ffffff
 
 # class                 border   backgr.  text     indicator child_border
-client.focused          $acc_bg  $acc_bg  $sel_fg  #2e9ef4   $acc_bg
+client.focused          $acc_bg  $acc_bg  $sel_fg  #eeeeee   $acc_bg
 client.focused_inactive $sel_bg  $sel_bg  $sel_fg  $base_bg  $base_bg
 client.unfocused        $base_bg $base_bg $base_fg $base_bg  $base_bg
 client.urgent           #2f343a  #900000  #ffffff  #900000   #900000
@@ -159,11 +160,6 @@ bar {
     i3bar_command $HOME/.config/polybar/launch.sh
 }
 
-# Autostart list
-exec transmission-gtk -m
-exec urxvtd -q -f -o
-exec xset b off # turn off annoying beep sound
-
 # Hide borders on workspaces with only one window visible
 hide_edge_borders smart
 
@@ -173,6 +169,7 @@ new_float normal 2
 
 # Floating windows
 for_window [class="Galculator"] floating enable
+for_window [class="Spacefm" title="Find Files"] floating enable
 
 # Automatic back-and-forth when switching to the current workspace
 workspace_auto_back_and_forth yes
