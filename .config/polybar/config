@@ -18,7 +18,7 @@ font-1 = FontAwesome:size=20;5
 font-2 = IcoMoon\-Free:size=20;5
 font-3 = Noto Sans:size=24:weight=bold;5
 font-4 = icomoon:size=20;5
-font-5 = Noto Emoji:size=20:weight=bold;5
+font-5 = Noto Emoji:size=20;5
 font-6 = icomoon\-wifi:size=20;5
 font-7 = Noto Sans:size=17;5
 modules-left = i3 mpd
