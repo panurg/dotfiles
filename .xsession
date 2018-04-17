@@ -1,4 +1,7 @@
 #!/bin/sh
+$HOME/.screenlayout/double.sh
+urxvtd -q -f -o
+xset b off
 ~/.fehbg &
 telegram-desktop &
 slack &

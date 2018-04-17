@@ -160,11 +160,6 @@ bar {
     i3bar_command $HOME/.config/polybar/launch.sh
 }
 
-# Autostart list
-exec $HOME/.screenlayout/double.sh
-exec urxvtd -q -f -o
-exec xset b off # turn off annoying beep sound
-
 # Hide borders on workspaces with only one window visible
 hide_edge_borders smart
 
