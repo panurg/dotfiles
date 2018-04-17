@@ -32,9 +32,9 @@ windows:
   - logs:
       layout: main-horizontal
       panes:
-        - adb shell
-        - adb logcat
-        - adb logcat -b radio
+        - while true; do echo "- waiting for device -"; adb wait-for-device; adb shell; done
+        - while true; do adb logcat; done
+        - while true; do adb logcat -b radio; done
   - builds: lunch myco-eng
   - work: repo status
   - misc:
