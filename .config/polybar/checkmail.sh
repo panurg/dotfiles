@@ -1,37 +1,31 @@
 #!/usr/bin/env sh
 
-fetchmail -c 2>/dev/null | (
-   global_count=0
+printout() {
+   fetchmail -c 2>/dev/null | (
+      global_count=0
 
-   while read line; do
-      total=$(echo $line | cut -d " " -f1)
-      seen=$(echo $line | cut -d " " -f3 | sed 's/(//')
-      unread=$(echo "$total - $seen" | bc)
-      # mbox=$(echo $line | cut -d " " -f8)
-      # case $mbox in
-      #    "localhost.")
-      #       mbox="Mera"
-      #       ;;
-      #    "webmail.ascom-resource.com.")
-      #       mbox="Ascom"
-      #       ;;
-      #    *)
-      #       mbox="Unknown"
-      #       ;;
-      # esac
+      while read line; do
+         total=$(echo $line | cut -d " " -f1)
+         seen=$(echo $line | cut -d " " -f3 | sed 's/(//')
+         unread=$(echo "$total - $seen" | bc)
+         global_count=$(expr $global_count + $unread)
+      done
 
-      # if [ $unread -gt 0 ]
-      # then
-      #    [ $unread -eq 1 ] && suffix="" || suffix="s"
-      #    dunstify -i mail-unread "$unread new mail$suffix" "at $mbox mailbox"
-      # fi
+      if [ $global_count -gt 0 ]
+      then
+         echo " $global_count"
+      else
+         echo ""
+      fi
+   )
+}
 
-      global_count=$(expr $global_count + $unread)
-   done
+trap 'echo %{T8}%{F#919191}refreshing%{F-}%{T-}' SIGUSR1
+trap exit SIGINT
 
-   if [ $global_count -gt 0 ]
-   then
-      echo " $global_count"
-   fi
-)
+while true; do
+   printout
 
+   sleep 900 &
+   wait
+done
