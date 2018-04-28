@@ -7,4 +7,5 @@ telegram-desktop &
 slack &
 compton &
 spacefm -d &
+davmail &
 exec /usr/bin/i3

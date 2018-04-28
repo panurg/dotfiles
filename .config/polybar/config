@@ -23,7 +23,7 @@ font-6 = icomoon\-wifi:size=12;2
 font-7 = Noto Sans:size=10;2
 modules-left = i3 mpd
 modules-center = xwindow
-modules-right = xkeyboard volume date
+modules-right = xkeyboard mail volume date
 tray-position = right
 tray-padding = 0
 ; wm-restack = i3
@@ -102,5 +102,10 @@ format-online =
 format-playing = <label-song>
 format-playing-foreground = ${colors.foreground-alt}
 label-song-font = 8
+
+[module/mail]
+type = custom/script
+exec = $HOME/.config/polybar/checkmail.sh
+interval = 900
 
 ; vim: ft=dosini
