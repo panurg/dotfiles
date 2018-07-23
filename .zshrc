@@ -81,6 +81,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias mux=tmuxinator
 alias config='$(which git) --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias diff='diff -u --color'
 
 # Android-MYco
 # Aliases for speeding up work with device
