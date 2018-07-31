@@ -92,6 +92,14 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 0
 
+# move workspace to output
+bindsym $mod+Ctrl+h move workspace to output left
+bindsym $mod+Ctrl+l move workspace to output right
+bindsym $mod+Ctrl+k move workspace to output up
+bindsym $mod+Ctrl+j move workspace to output down
+# bindsym $mod+Ctrl+space move workspace to output primary
+
+
 # assign applications to workspaces
 assign [class="Chromium"] 2
 assign [class="Gvim"] 3
