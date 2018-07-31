@@ -117,4 +117,4 @@ alias j=_j
 
 # color sources for less by using pygments
 export LESSOPEN='| pygmentize -f terminal16m %s'
-export LESS='-R
+export LESS='-R'
