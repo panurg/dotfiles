@@ -108,6 +108,7 @@ assign [class="TelegramDesktop"] 5
 assign [class="Slack"] 5
 assign [class="Sonata"] 9
 assign [class="Spacefm"] 4
+assign [class="Linphone"] 6
 
 # reload the configuration file
 # bindsym $mod+Shift+c reload
