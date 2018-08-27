@@ -1,7 +1,7 @@
 #!/bin/sh
-exec transmission-gtk -m
-exec urxvtd -q -f -o
-exec xset b off
+transmission-gtk -m &
+urxvtd -q -f -o
+xset b off
 ~/.fehbg &
 telegram-desktop &
 compton -b
