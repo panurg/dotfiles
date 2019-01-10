@@ -93,6 +93,7 @@ alias fr='fastboot reboot'
 alias fd='fastboot devices'
 alias ffb='fastboot flash boot'
 alias ffs='fastboot flash system'
+alias ffr='fastboot flash recovery'
 alias ffa='ffb && ffs $OUT/system.img.gz && fr'
 alias asit="adb shell input text"
 alias asik="adb shell input keyevent"
@@ -118,3 +119,4 @@ alias j=_j
 # color sources for less by using pygments
 export LESSOPEN='| pygmentize -f terminal16m %s'
 export LESS='-R'
+
