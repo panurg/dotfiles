@@ -8,4 +8,5 @@ slack &
 compton &
 spacefm -d &
 davmail &
+start-pulseaudio-x11 &
 exec /usr/bin/i3
