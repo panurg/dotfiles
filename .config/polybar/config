@@ -23,7 +23,7 @@ font-6 = icomoon\-wifi:size=12;2
 font-7 = Noto Sans:size=10;2
 modules-left = i3 mpd
 modules-center = xwindow
-modules-right = xkeyboard mail volume date
+modules-right = xkeyboard mail pulseaudio date
 tray-position = right
 tray-padding = 0
 ; wm-restack = i3
@@ -76,22 +76,15 @@ time = %R
 time-alt = ${self.time}
 label = %date% %{T4}%time%%{T-}
 
-[module/volume]
-type = internal/alsa
+[module/pulseaudio]
+type = internal/pulseaudio
 format-volume = <ramp-volume>
-headphone-mixer = Headphone
-headphone-id = 35
-mapped = true
 label-muted = 
 label-muted-foreground = ${colors.accent}
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
-ramp-headphones-0 =  
-ramp-headphones-1 =  
-ramp-headphones-2 =  
-ramp-headphones-3 =  
 
 [module/mpd]
 type = internal/mpd
