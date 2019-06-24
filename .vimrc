@@ -17,7 +17,7 @@ set fileformats=unix,dos,mac
 
 " GUI options
 if has('gui_running')
-    set guioptions=aAP
+    set guioptions=aAPi
     if has('win32') || has('win64')
         set guifont=Pragmata_Pro:h10,Consolas:h10
         " maximize window in Windows
