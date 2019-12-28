@@ -10,3 +10,4 @@
 	showPatch = true
 [core]
 	excludesfile = ~/.gitignore
+	untrackedCache = true
