@@ -52,3 +52,5 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 1. dunst (>=1.2.0)
 1. fzf
 1. pygments
+1. oh-my-zsh
+1. p10k
