@@ -53,7 +53,7 @@ plugins=(git tmux tmuxinator z vi-mode)
 
 # User configuration
 
-export PATH="/usr/lib/ccache/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.9.3:$(gem environment gemdir)/bin"
+export PATH="/usr/lib/ccache/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.9.3:$(gem environment gemdir)/bin:$HOME/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # tmux configuration
