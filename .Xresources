@@ -1,7 +1,7 @@
 URxvt.scrollBar: false
 URxvt*scrollTtyOutput: false
 URxvt*scrollTtyKeypress: true
-URxvt.font: xft:PragmataPro:size=12
+URxvt.font: xft:PragmataPro:size=12,xft:MesloLGS\ NF
 ! URxvt.font: xft:Monospace:size=12
 
 *.foreground:   #dedede
